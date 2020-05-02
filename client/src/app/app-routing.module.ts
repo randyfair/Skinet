@@ -2,10 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ShopComponent } from './shop/shop.component';
+import { TestErrorComponent } from './core/test-error/test-error.component';
+import { ServerErrorComponent } from './core/server-error/server-error.component';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'test-error', component: TestErrorComponent},
+  {path: 'not-found', component: NotFoundComponent},
+  {path: 'server-error', component: ServerErrorComponent},
   {path: 'shop', loadChildren: () => import('./shop/shop.module').then(mods => mods.ShopModule)},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
